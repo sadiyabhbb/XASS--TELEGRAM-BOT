@@ -1,0 +1,14 @@
+{
+  "prefix": "your-prefix",
+  "greetNewMembers": {
+        "enabled": true,
+        "gifUrl": "https://tinyurl.com/2xzaydex"
+  },
+  "port": "8080",
+  "owner": "your-name",
+  "owner_id": your-uid,
+  "token": "token-here",
+  "age": "14+",
+  "gender": "male",
+  "country": "Bangladesh"
+}
