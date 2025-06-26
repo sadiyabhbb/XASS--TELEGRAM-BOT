@@ -52,8 +52,8 @@ It’s not just a bot. It’s your *command center* inside Telegram.
 ### 2. Set Up Locally
 
 ```bash
-git clone https://github.com/BAYJID-00/Xass-V2.git
-cd Xass-V2
+git clone https://github.com/BAYJID-00/XASS--TELEGRAM-BOT.git
+cd XASS--TELEGRAM-BOT
 npm install
 
 
