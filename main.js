@@ -177,7 +177,7 @@ bot.on('new_chat_members', (msg) => {
 
     msg.new_chat_members.forEach(member => {
         const fullName = `${member.first_name} ${member.last_name || ''}`.trim();
-        const welcomeText = `👋 Hello, <b>${fullName}</b>!\n\n✨ Welcome to <b>${msg.chat.title}</b>!\n🤖 I am <b>XASS</b>, your bot assistant.\n\n🎯 Use <code>${config.prefix}help</code> to get started.`;
+        const welcomeText = `👋 Hello, <b>${fullName}</b>!\n\n✨ Welcome to <b>${msg.chat.title}</b>!\n🤖 I am <b>XASS</b>, your  assistant.\n\n🎯 Use <code>${config.prefix}help</code> to get started.`;
 
         bot.sendAnimation(chatId, gifUrl, {
             caption: '🎉 New Member Joined!',
