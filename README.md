@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <b>A powerful, modular, API-integrated Telegram bot framework for automation, creativity & control.</b>
+  <b>Made by :> ©MOHAMMAD BAYJID</b>
 </p>
 
 <p align="center">
