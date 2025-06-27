@@ -1,140 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xass-V2</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        .navbar, .footer {
-            background-color: #1c1c1c;
-            font-family: monospace;
-        }
-        .navbar-brand {
-            font-family: monospace;
-            font-size: 24px;
-            line-height: 2.5;
-            border: none;
-        }
-        .card {
-            background-color: #1e1e1e;
-            border: none;
-            border-radius: 35px;
-            font-family: monospace;
-        }
-        .card-header {
-            background-color: #282828;
-            border-top-left-radius: 35px;
-            border-top-right-radius: 35px;
-            font-family: monospace;
-        }
-        .card-body {
-            border-bottom-left-radius: 35px;
-            border-bottom-right-radius: 35px;
-            font-family: monospace;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xass-V2</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: monospace;
+    }
+
+    .navbar, .footer {
+      background-color: #1c1c1c;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    .card-header {
+      background-color: #282828;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      font-weight: bold;
+    }
+
+    .card-body a {
+      color: #03dac6;
+      text-decoration: none;
+    }
+
+    .card-body a:hover {
+      text-decoration: underline;
+    }
+
+    .modal-content {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border-radius: 15px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid #333;
+    }
+
+    .modal-footer {
+      border-top: 1px solid #333;
+    }
+
+    .btn-secondary {
+      background-color: #333;
+      border: none;
+    }
+
+    .btn-secondary:hover {
+      background-color: #444;
+    }
+
+    .nav-link {
+      color: #ccc !important;
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+    }
+
+    #uptime {
+      color: #bb86fc;
+      font-weight: bold;
+    }
+
+    @media (max-width: 767px) {
+      .card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">XassV2-TG BOT</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://t.me/XarV2DemoBot" target="_blank">Demo Bot</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <div class="card-header">This Bot Owner</div>
-                    <div class="card-body">
-                        <p>Name: BaYjid</p>
-                        <p>Contact: <a href="https://t.me/MOHAMMADBAYJID" target="_blank">Telegram</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <div class="card-header">Bot Source Code</div>
-                    <div class="card-body">
-                        <p>GitHub: <a href="https://github.com/BAYJID-00/Xass-V2" target="_blank">Xass-V2 Repository</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <div class="card-header">System Info</div>
-                    <div class="card-body">
-                        <p>Uptime: <span id="uptime">Loading...</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">XassV2-TG BOT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://t.me/XarV2DemoBot" target="_blank">Demo Bot</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Modal -->
-    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: #1e1e1e; color: #ffffff;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="aboutModalLabel">About XassV2-TG BOT</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: #ffffff;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>XassV2-TG BOT is a versatile and powerful Telegram bot designed to provide various functionalities and services. Developed by BaYjid, the bot offers seamless integration with Telegram and various other platforms.</p>
-                    <p>For more information, contact the developer via <a href="https://t.me/MOHAMMADBAYJID" target="_blank">Telegram</a>.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header">This Bot Owner</div>
+          <div class="card-body">
+            <p>Name: BaYjid</p>
+            <p>Contact: <a href="https://t.me/MOHAMMADBAYJID" target="_blank">Telegram</a></p>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header">Bot Source Code</div>
+          <div class="card-body">
+            <p>GitHub: <a href="https://github.com/BAYJID-00/Xass-V2" target="_blank">Xass-V2 Repository</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header">System Info</div>
+          <div class="card-body">
+            <p>Uptime: <span id="uptime">Loading...</span></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let startTime = Date.now();
+  <!-- Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">About XassV2-TG BOT</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: #ffffff;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>XassV2-TG BOT</strong> is a powerful Telegram bot developed by <strong>BaYjid</strong>. It provides a wide range of features, from automation to fun commands and admin tools.</p>
+          <p>For support or inquiries, reach out via <a href="https://t.me/MOHAMMADBAYJID" target="_blank">Telegram</a>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            function formatUptime(uptime) {
-                const seconds = Math.floor(uptime / 1000);
-                const minutes = Math.floor(seconds / 60);
-                const hours = Math.floor(minutes / 60);
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const startTime = Date.now();
 
-                const remainingSeconds = seconds % 60;
-                const remainingMinutes = minutes % 60;
+      function formatUptime(uptime) {
+        const seconds = Math.floor(uptime / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const remainingSeconds = seconds % 60;
+        const remainingMinutes = minutes % 60;
+        return `${hours} hours, ${remainingMinutes} minutes, and ${remainingSeconds} seconds`;
+      }
 
-                return `${hours} hours, ${remainingMinutes} minutes, and ${remainingSeconds} seconds`;
-            }
+      function updateUptime() {
+        const now = Date.now();
+        const uptime = now - startTime;
+        document.getElementById('uptime').innerText = formatUptime(uptime);
+      }
 
-            function fetchUptime() {
-                const now = Date.now();
-                const uptime = now - startTime;
-                const uptimeString = formatUptime(uptime);
-                document.getElementById('uptime').innerText = uptimeString;
-            }
-
-            fetchUptime();
-            setInterval(fetchUptime, 1000); // Refresh every second
-        });
-    </script>
+      updateUptime();
+      setInterval(updateUptime, 1000);
+    });
+  </script>
 </body>
 </html>
