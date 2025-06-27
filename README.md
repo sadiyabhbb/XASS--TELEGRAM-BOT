@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&center=true&vCenter=true&width=435&lines=%F0%9F%8C%88+Xass-V2+Telegram+Bot;Modular+%7C+Powerful+%7C+Fast" alt="Xass-V2 Banner" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&center=true&vCenter=true&width=435&lines=%F0%9F%8C%88+Xass-V2+Telegram+Bot;+%7C+Fast" alt="Xass-V2" />
 </h1>
 
 <p align="center">
