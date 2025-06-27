@@ -62,7 +62,7 @@ node index.js
 ---
 
 
-/*Example command*
+### /*Example command*
 
 
 module.exports = {
