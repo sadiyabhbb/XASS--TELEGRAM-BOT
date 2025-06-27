@@ -58,3 +58,24 @@ git clone https://github.com/BAYJID-00/XASS--TELEGRAM-BOT.git
 cd XASS--TELEGRAM-BOT
 npm install
 node index.js
+
+---
+
+
+/*Example command*
+
+
+module.exports = {
+  config: {
+    name: "hello", // 👈 /hello
+    description: "Replies with a welcome message",
+    usage: "/hello",
+    category: "fun",
+    usePrefix: true // So it works with /hello
+  },
+
+  onStart: async function ({ bot, message }) {
+    const name = message.from.first_name || "friend";
+    await bot.sendMessage(message.chat.id, `👋 Hello, ${name}! Welcome to Xass-V2.`);
+  }
+};
