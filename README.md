@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <b>Made by :> ©MOHAMMAD BAYJID</b>
+  <b>**Made by :> ©MOHAMMAD BAYJID**</b>
 </p>
 
 <p align="center">
