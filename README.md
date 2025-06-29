@@ -3,8 +3,10 @@
 </h1>
 
 <p align="center">
-  <b>Made by :> ©MOHAMMAD BAYJID</b>
+  <img src="https://i.imgur.com/GgDkyHz.jpeg" alt="Xass Banner" width="400"/>
 </p>
+
+<p align="center"><b>Made by :> © MOHAMMAD BAYJID</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Xass-V2-2.0-blue?style=for-the-badge">
@@ -22,60 +24,38 @@ Most Telegram bots are either:
 - ❌ Too restrictive  
 
 **Xass-V2** solves this with:
-- ✅ Modular command system (drop files in `/cmd`)  
-- 🔌 External API support (Lyrics, AI Images, Weather, VirusTotal)  
-- 🔐 Role-based admin protection  
-- 🧱 Clean, scalable developer structure  
+- ✅ Modular command system (`/cmd`)  
+- 🔌 API integrations (Lyrics, AI Images, Weather, VirusTotal)  
+- 🔐 Role-based admin system  
+- 🧱 Developer-friendly code structure  
 
 > It’s not just a bot — it’s your **command center** inside Telegram.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture
 
-- 📦 Command modules in `/cmd`  
-- 💬 Powered by `node-telegram-bot-api`  
-- 🔒 Per-command permission control  
-- ⚙️ Auto-load system  
-- 🚀 Easily extendable
-
----
-
-## 🚀 Quickstart Guide
-
-### 🔑 1. Get a Bot Token
-
-1. Open [@BotFather](https://t.me/BotFather) on Telegram  
-2. Type `/newbot` and follow prompts  
-3. Save your **Bot Token**
+- 📁 Commands → `/cmd/` folder  
+- ⚙️ Auto-loader → Loads all modules on start  
+- 🔒 Permission → Per-command access control  
+- 💬 Powered by `node-telegram-bot-api`
 
 ---
 
-### 🛠️ 2. Set Up Locally
+## 🚀 Quickstart
+
+### 1️⃣ Create Bot Token
+
+1. Go to [@BotFather](https://t.me/BotFather)  
+2. Type `/newbot` → Follow steps  
+3. Save the **bot token**
+
+---
+
+### 2️⃣ Install & Run
 
 ```bash
 git clone https://github.com/BAYJID-00/XASS--TELEGRAM-BOT.git
 cd XASS--TELEGRAM-BOT
 npm install
 node index.js
-
----
-
-
-### /*Example command*
-
-
-module.exports = {
-  config: {
-    name: "hello", // 👈 /hello
-    description: "Replies with a welcome message",
-    usage: "/hello",
-    category: "fun",
-    usePrefix: true // So it works with /hello
-  },
-
-  onStart: async function ({ bot, message }) {
-    const name = message.from.first_name || "friend";
-    await bot.sendMessage(message.chat.id, `👋 Hello, ${name}! Welcome to Xass-V2.`);
-  }
-};
