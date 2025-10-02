@@ -12,11 +12,12 @@ module.exports = {
     cooldown: 5
   },
 
-  onStart: async function({ msg, bot, match }) {
+  onStart: async function({ msg, bot }) {
     try {
-      const args = match && match[1] ? match[1].trim().split(" ") : [];
+      const text = msg.body || msg.text || "";
+      const args = text.split(" ").slice(1); // first word is /cmd
 
-      if (!args.length || !args[0]) {
+      if (!args.length) {
         return bot.sendMessage(msg.chat.id, `Usage:\n/cmd loadall\n/cmd install <file.js>\n/cmd load <file.js>\n/cmd unload <file.js>`);
       }
 
