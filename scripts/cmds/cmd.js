@@ -7,15 +7,16 @@ module.exports = {
     description: "Manage bot commands dynamically",
     usage: "/cmd <loadall|install|load|unload> [file]",
     category: "admin",
-    role: 2, // only bot admin
+    role: 2, // Only bot admin
     aliases: ["command"],
     cooldown: 5
   },
 
   onStart: async function({ msg, bot, match }) {
     try {
-      const args = match ? match[1]?.trim().split(" ") : [];
-      if (!args || args.length === 0) {
+      const args = match && match[1] ? match[1].trim().split(" ") : [];
+
+      if (!args.length || !args[0]) {
         return bot.sendMessage(msg.chat.id, `Usage:\n/cmd loadall\n/cmd install <file.js>\n/cmd load <file.js>\n/cmd unload <file.js>`);
       }
 
@@ -65,7 +66,7 @@ module.exports = {
 
           try {
             delete require.cache[require.resolve(filePath)];
-            const cmd = require(filePath);
+            require(filePath);
             return bot.sendMessage(msg.chat.id, `✅ Loaded ${fileName} successfully.`);
           } catch(e) {
             return bot.sendMessage(msg.chat.id, `⚠ Error loading ${fileName}: ${e.message}`);
