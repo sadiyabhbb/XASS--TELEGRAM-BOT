@@ -1,13 +1,13 @@
 {
-  "prefix": "your-prefix",
+  "prefix": "/",
   "greetNewMembers": {
         "enabled": true,
         "gifUrl": "https://tinyurl.com/2xzaydex"
   },
   "port": "8080",
   "owner": "your-name",
-  "owner_id": your-uid,
-  "token": "token-here",
+  "owner_id": 7933110913,
+  "token": "8034233581:AAH3GPVhyEDCGO6vXuulmAYsUq1Eq2OVJik",
   "age": "14+",
   "gender": "male",
   "country": "Bangladesh"
